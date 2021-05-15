@@ -55,6 +55,7 @@
     <!-- Values for FP Actions -->
 
     <string name="audio_title">오디오</string>
+    <string name="audio_title">사운드 강화</string>
 
     <!-- Dirac settings -->
     <string name="dirac_title">Mi 사운드 강화</string>

@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 <resources>
-    <string name="advanced_settings">Ajustes Device</string>
+    <string name="advanced_settings">Ajustes Xiaomi</string>
     <string name="advanced_settings_summary">Ajustes adicionales</string>
 
     <string name="display_title">Pantalla</string>
@@ -31,10 +31,8 @@
     <string name="notification_led_title">Brillo del LED</string>
 
      <!-- Ambient Display -->
-    <string name="ambient_display">Pantalla ambiente</string>
-    <string name="advanced_doze_summary">Ajustes pantalla ambiente</string>
-
-    <!-- FP Actions -->
+    <string name="ambient_display">Doze de xiaomi</string>
+    <string name="advanced_doze_summary">Pantalla ambiente</string>
 
     <!-- Dirac settings -->
     <string name="dirac_title">Mi Sound Enhancer</string>
@@ -112,6 +110,6 @@
 
     <!-- CustomSeekBarPreference -->
     <string name="default_value">Valor por defecto</string>
-    <string name="edit_hint" formatted="false">Valor entre %1$d y %2$d</string>
+    <string name="edit_hint">Valor entre %1$d y %2$d</string>
 
 </resources>

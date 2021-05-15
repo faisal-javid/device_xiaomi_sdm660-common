@@ -137,6 +137,7 @@ public class DeviceSettings extends PreferenceFragment implements
         mTHERMAL.setSummary(mTHERMAL.getEntry());
         mTHERMAL.setOnPreferenceChangeListener(this);
 
+        // Dirac
         boolean enhancerEnabled;
         try {
             enhancerEnabled = DiracService.sDiracUtils.isDiracEnabled();
@@ -214,6 +215,16 @@ public class DeviceSettings extends PreferenceFragment implements
                 } catch (java.lang.NullPointerException e) {
                     getContext().startService(new Intent(getContext(), DiracService.class));
                     DiracService.sDiracUtils.setLevel(String.valueOf(value));
+                }
+                break;
+
+            case PREF_KEY_FPS_INFO:
+                boolean enabled = (boolean) value;
+                Intent fpsinfo = new Intent(this.getContext(), FPSInfoService.class);
+                if (enabled) {
+                    this.getContext().startService(fpsinfo);
+                } else {
+                    this.getContext().stopService(fpsinfo);
                 }
                 break;
 
