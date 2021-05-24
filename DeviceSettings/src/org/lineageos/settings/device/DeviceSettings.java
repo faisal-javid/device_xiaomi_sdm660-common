@@ -43,18 +43,12 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String CATEGORY_NOTIF = "notification_led";
     public static final String PREF_NOTIF_LED = "notification_led_brightness";
     public static final String NOTIF_LED_PATH = "/sys/class/leds/white/max_brightness";
-    
-    public static final String PREF_KEY_FPS_INFO = "fps_info";
-    
+
     public static final  String CATEGORY_AUDIO_AMPLIFY = "audio_amplify";
     public static final  String PREF_HEADPHONE_GAIN = "headphone_gain";
     public static final  String PREF_MIC_GAIN = "mic_gain";
     public static final  String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
     public static final  String MIC_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
-
-    public static final String CATEGORY_FASTCHARGE = "usb_fastcharge";
-    public static final String PREF_USB_FASTCHARGE = "fastcharge";
-    public static final String USB_FASTCHARGE_PATH = "/sys/kernel/fast_charge/force_fast_charge";
 
     // value of vtg_min and vtg_max
     public static final int MIN_VIBRATION = 116;
@@ -110,7 +104,7 @@ public class DeviceSettings extends PreferenceFragment implements
             VibrationSeekBarPreference vibrationStrength = (VibrationSeekBarPreference) findPreference(PREF_VIBRATION_STRENGTH);
             vibrationStrength.setOnPreferenceChangeListener(this);
         } else { getPreferenceScreen().removePreference(findPreference(CATEGORY_VIBRATOR)); }
-        
+
         // Headphone & Mic Gain
         if (FileUtils.fileWritable(HEADPHONE_GAIN_PATH) && FileUtils.fileWritable(MIC_GAIN_PATH)) {
            CustomSeekBarPreference headphoneGain = (CustomSeekBarPreference) findPreference(PREF_HEADPHONE_GAIN);
@@ -121,13 +115,6 @@ public class DeviceSettings extends PreferenceFragment implements
           getPreferenceScreen().removePreference(findPreference(CATEGORY_AUDIO_AMPLIFY));
         }
 
-        if (FileUtils.fileWritable(USB_FASTCHARGE_PATH)) {
-            mFastcharge = (SecureSettingSwitchPreference) findPreference(PREF_USB_FASTCHARGE);
-            mFastcharge.setEnabled(Fastcharge.isSupported());
-            mFastcharge.setChecked(Fastcharge.isCurrentlyEnabled(this.getContext()));
-            mFastcharge.setOnPreferenceChangeListener(new Fastcharge(getContext()));
-        } else { getPreferenceScreen().removePreference(findPreference(CATEGORY_FASTCHARGE)); }
-
         PreferenceCategory displayCategory = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
         if (isAppNotInstalled(DEVICE_DOZE_PACKAGE_NAME)) {
             displayCategory.removePreference(findPreference(PREF_DEVICE_DOZE));
@@ -136,9 +123,6 @@ public class DeviceSettings extends PreferenceFragment implements
         if (isAppNotInstalled(DEVICE_JASON_PACKAGE_NAME)) {
             displayCategory.removePreference(findPreference(PREF_DEVICE_JASON));
         }
-        
-        SecureSettingSwitchPreference fpsInfo = (SecureSettingSwitchPreference) findPreference(PREF_KEY_FPS_INFO);
-        fpsInfo.setOnPreferenceChangeListener(this);
 
         Preference kcal = findPreference(PREF_DEVICE_KCAL);
 
@@ -233,16 +217,6 @@ public class DeviceSettings extends PreferenceFragment implements
                 }
                 break;
 
-            case PREF_KEY_FPS_INFO:
-                boolean enabled = (boolean) value;
-                Intent fpsinfo = new Intent(this.getContext(), FPSInfoService.class);
-                if (enabled) {
-                    this.getContext().startService(fpsinfo);
-                } else {
-                    this.getContext().stopService(fpsinfo);
-                }
-                break;
-                
             default:
                 break;
         }

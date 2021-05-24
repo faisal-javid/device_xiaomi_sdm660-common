@@ -148,18 +148,9 @@
     <string name="default_value">Default value</string>
     <string name="edit_hint">Value between %1$d - %2$d</string>
 
-    <!-- FPS Info -->
-    <string name="fps_info_title">FPS Overlay</string>
-    <string name="fps_info_summary">Show overlay with current frames per second</string>
-    
     <!-- Audio amplification -->
     <string name="audio_amplify">Amplify Audio</string>
     <string name="headphone_gain">Headphone Gain</string>
     <string name="mic_gain">Microphone Gain</string>
-
-    <!-- USB fastcharge -->
-    <string name="usb_fastcharge_title">USB Fastcharge</string>
-    <string name="fastcharge_title">Enable USB Fastcharge</string>
-    <string name="fastcharge_summary">Charge upto 900mA when connected to a computer via USB 3.0 port</string>
 
 </resources>

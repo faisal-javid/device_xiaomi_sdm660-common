@@ -136,10 +136,6 @@
     <string name="default_value">Valor padrão</string>
     <string name="edit_hint" formatted="false">Valor entre %1$d e %2$d</string>
 
-    <!-- FPS Info -->
-    <string name="fps_info_title">Mostrar FPS</string>
-    <string name="fps_info_summary">Mostra os quadros por segundo sobrepostos na tela</string>
-    
     <!-- Audio amplification -->
     <string name="audio_amplify">Amplificar audio</string>
     <string name="headphone_gain">Ganho do headphone</string>

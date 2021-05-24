@@ -142,10 +142,6 @@
     <string name="default_value">Значение по умолчанию</string>
     <string name="edit_hint" formatted="false">Значение между %1$d и %2$d</string>
 
-    <!-- FPS Info -->
-    <string name="fps_info_title">FPS Показатель</string>
-    <string name="fps_info_summary">Показать наложение с текущими кадрами в секунду</string>
-    
     <!-- Audio amplification -->
     <string name="audio_amplify">Усиление звука</string>
     <string name="headphone_gain">Усиление наушников</string>

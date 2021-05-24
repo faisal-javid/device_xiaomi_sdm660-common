@@ -31,7 +31,7 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
 
     public static final  String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
     public static final  String MIC_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
-    
+
     public void onReceive(Context context, Intent intent) {
 
         // KCAL
@@ -86,12 +86,5 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
 
         // Dirac
         context.startService(new Intent(context, DiracService.class));
-
-        // FPS Info
-        boolean enabled = Settings.Secure.getInt(context.getContentResolver(), 
-                DeviceSettings.PREF_KEY_FPS_INFO, 0) == 1;
-        if (enabled) {
-            context.startService(new Intent(context, FPSInfoService.class));
         }
-    }
 }
