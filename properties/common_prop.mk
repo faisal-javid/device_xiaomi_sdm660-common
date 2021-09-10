@@ -40,6 +40,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.dolby.ds2.enabled=false \
     vendor.audio.dolby.ds2.hardbypass=false \
     vendor.audio.flac.sw.decoder.24bit=true \
+    vendor.audio.hal.boot.timeout.ms=20000 \
     vendor.audio_hal.period_size=240 \
     vendor.audio.hw.aac.encoder=true \
     vendor.audio.offload.buffer.size.kb=64 \
