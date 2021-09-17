@@ -572,6 +572,11 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 WITH_DEXPREOPT_DEBUG_INFO := false
 
 # Sqlite
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    Settings \
+    SystemUI
+
+# Tethering
 PRODUCT_PACKAGES += \
     sqlite3
 
@@ -585,7 +590,7 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0-service.mock
+    android.hardware.thermal@2.0-service.xiaomi_sdm660.qti
 
 # Thermal Conf
 PRODUCT_COPY_FILES += \
