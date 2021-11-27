@@ -43,11 +43,7 @@ TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-<<<<<<< HEAD
 TARGET_2ND_CPU_VARIANT := cortex-a73
-=======
-TARGET_2ND_CPU_VARIANT := kryo
->>>>>>> parent of 0806a782d (sdm660-common: Optimize build specifically for target CPU)
 
 # FM
 ifeq ($(BOARD_HAVE_QCOM_FM),true)
