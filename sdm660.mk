@@ -118,10 +118,6 @@ PRODUCT_PACKAGES += \
     com.dsi.ant.antradio_library \
     com.dsi.ant@1.0.vendor
 
-# ANT Permission
-PRODUCT_COPY_FILES += \
-    AntHalService
-
 # AuthSecret
 PRODUCT_PACKAGES += \
     android.hardware.authsecret@1.0-service
