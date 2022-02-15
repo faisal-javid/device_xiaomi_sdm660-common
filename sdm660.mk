@@ -159,7 +159,7 @@ PRODUCT_COPY_FILES += \
 
 # Configstore
 PRODUCT_PACKAGES += \
-    disable_configstore
+    android.hardware.configstore@1.1-service
 
 # Crypto
 PRODUCT_PACKAGES += \
